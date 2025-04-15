@@ -15,6 +15,7 @@ if (isset($_POST['signup'])) {
     if ($result) {
         echo 'Data Inserted Sucessfully';
         $_SESSION["user"] = ["username" => $username, "email" => $email];
+        header("location: /discussion_app");
     } else {
         echo 'Error Data Inserting';
     }
