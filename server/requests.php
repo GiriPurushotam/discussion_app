@@ -13,10 +13,11 @@ if (isset($_POST['signup'])) {
     $result = $users->execute();
 
     if ($result) {
-        echo 'Data Inserted Sucessfully';
         $_SESSION["user"] = ["username" => $username, "email" => $email];
         header("location: /discussion_app");
     } else {
         echo 'Error Data Inserting';
     }
+} else if (isset($_POST['login'])) {
+    print_r($_POST);
 }

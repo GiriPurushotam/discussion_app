@@ -11,9 +11,9 @@
 <body>
     <?php session_start(); ?>
     <?php include('./client/header.php'); ?>
-    <?php if (isset($_GET['signup']) && ! $_SESSION['user']['username']) : ?>
+    <?php if (isset($_GET['signup']) && !isset($_SESSION['user']['username'])) : ?>
         <?php include('./client/signup.php'); ?>
-    <?php elseif (isset($_GET['login']) && ! $_SESSION['user']['username']): ?>
+    <?php elseif (isset($_GET['login']) && !isset($_SESSION['user']['username'])): ?>
         <?php include('./client/login.php'); ?>
 
     <?php endif ?>
