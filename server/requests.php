@@ -19,5 +19,23 @@ if (isset($_POST['signup'])) {
         echo 'Error Data Inserting';
     }
 } else if (isset($_POST['login'])) {
-    print_r($_POST);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $username = "";
+
+    $loginQuery = " SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result = $conn->query($loginQuery);
+
+    if ($result->num_rows) {
+        foreach ($result as $row) {
+            $username = $row['username'];
+        }
+        $_SESSION['user'] = ['username' => $username, "email" => $email];
+        header("location: /discussion_app");
+    } else {
+        echo "Eroor log in";
+    }
+} else if (isset($_GET['logout'])) {
+    session_unset();
+    header("location: /discussion_app");
 }
