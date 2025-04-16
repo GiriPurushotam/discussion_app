@@ -15,6 +15,8 @@
         <?php include('./client/signup.php'); ?>
     <?php elseif (isset($_GET['login']) && !isset($_SESSION['user']['username'])): ?>
         <?php include('./client/login.php'); ?>
+    <?php elseif (isset($_GET['ask']) && isset($_SESSION['user']['username'])) : ?>
+        <?php include('./client/ask.php') ?>
 
     <?php endif ?>
 </body>
