@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-6 offset-sm-3 signup">
-            <button type="submit" name="login" class="btn btn-primary">Submit</button>
+            <button type="submit" name="ask" class="btn btn-primary">Ask Question</button>
         </div>
     </form>
 </div>
