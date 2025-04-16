@@ -16,7 +16,7 @@ if (isset($_POST['signup'])) {
         $_SESSION["user"] = ["username" => $username, "email" => $email];
         header("location: /discussion_app");
     } else {
-        echo 'Error Data Inserting';
+        echo 'Error Signing Up';
     }
 } else if (isset($_POST['login'])) {
     $email = $_POST['email'];
