@@ -9,7 +9,10 @@
         echo "<h4 class= 'margin-bottom question-title'>" . $row['title'] . "</h4>
              <p class='margin-bottom'>" . $row['description'] . "</p>";
         ?>
-        <textarea class="form-control margin-bottom" name="answer" id="answer">Your Answer...</textarea>
-        <button name="answer" id="answer" class="btn btn-primary margin-bottom">Submit</button>
+        <form action="./server/requests.php" method="post">
+            <input type="hidden" name="question_id" value="<?php echo $qid ?>">
+            <textarea class="form-control margin-bottom" name="answer" id="answer" placeholder="Your answer..."></textarea>
+            <button class="btn btn-primary margin-bottom">Submit</button>
+        </form>
     </div>
 </div>

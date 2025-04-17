@@ -47,12 +47,33 @@ if (isset($_POST['signup'])) {
     $category_id = $_POST['category'];
     $user_id    = $_SESSION['user']['user_id'];
 
-    $questionQuery = $conn->prepare("INSERT INTO questions (title, description, category_id, user_id) VALUES (?, ?, ?, ?)");
+    $questionQuery = $conn->prepare("INSERT INTO questions 
+    (title, description, category_id, user_id) 
+    VALUES (?, ?, ?, ?)");
+
     $questionQuery->bind_param("ssii", $title, $description, $category_id, $user_id);
     $result = $questionQuery->execute();
+
     if ($result) {
         header("location: /discussion_app");
     } else {
         echo "Error Something Wrong";
+    }
+} else if (isset($_POST['answer'])) {
+    $answer = $_POST['answer'];
+    $question_id = $_POST['question_id'];
+    $user_id = $_SESSION['user']['user_id'];
+
+    $answerQuery = $conn->prepare(" INSERT INTO answers 
+    (answer, question_id, user_id) 
+    VALUES (?, ?, ?)");
+
+    $answerQuery->bind_param("sii", $answer, $question_id, $user_id);
+    $result = $answerQuery->execute();
+
+    if ($result) {
+        header("location: /discussion_app?q-id=$question_id");
+    } else {
+        echo "Error Submitting Answer";
     }
 }
