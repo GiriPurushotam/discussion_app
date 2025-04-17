@@ -18,7 +18,7 @@ a {
     margin: 10px;
 }
 
-.question-list a {
+.question-list a, .question-title {
     font-size: 18px;
     text-decoration: none;
     color: rgb(38, 100, 216) !important;
@@ -27,4 +27,7 @@ a {
 .question-list h4 {
    margin: 0; 
    padding: 0;
+}
+.margin-bottom{
+margin-top: 15px;
 }

@@ -17,6 +17,9 @@
         <?php include('./client/login.php'); ?>
     <?php elseif (isset($_GET['ask']) && isset($_SESSION['user']['username'])) : ?>
         <?php include('./client/ask.php') ?>
+    <?php elseif (isset($_GET['q-id'])):  ?>
+        <?php $qid = $_GET['q-id']; ?>
+        <?php include('./client/questionDetail.php') ?>
     <?php elseif (include('./client/questions.php')):; ?>
     <?php endif ?>
 </body>
