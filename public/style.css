@@ -1,6 +1,8 @@
 a {
     color: black !important ;
 }
+
+
 .signup {
     /* text-align: center; */
     margin-top: 15px;
@@ -8,4 +10,21 @@ a {
 
 .heading {
     text-align: center;
+}
+
+.question-list {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+}
+
+.question-list a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(38, 100, 216) !important;
+}
+
+.question-list h4 {
+   margin: 0; 
+   padding: 0;
 }
