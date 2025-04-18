@@ -8,6 +8,8 @@
             } elseif (isset($_GET['u-id'])) {
 
                 $displayQuestionsQuery = " SELECT * FROM questions WHERE user_id = $uid";
+            } elseif (isset($_GET['latest'])) {
+                $displayQuestionsQuery = " SELECT * FROM questions ORDER BY id DESC";
             } else {
                 $displayQuestionsQuery = " SELECT * FROM questions";
             }

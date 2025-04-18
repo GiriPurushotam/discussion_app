@@ -27,6 +27,8 @@
         <?php $uid = $_GET['u-id'] ?>
         <?php include('./client/questions.php'); ?>
     <?php elseif (include('./client/questions.php')):; ?>
+    <?php elseif (isset($_GET['latest'])): ?>
+        <?php include('./client/questions.php') ?>
     <?php endif ?>
 </body>
 
