@@ -3,7 +3,11 @@
         <div class="col-8">
             <h1 class="heading">Questions</h1>
             <?php include('./common/db.php');
-            $displayQuestionsQuery = " SELECT * FROM questions";
+            if (isset($_GET["c-id"])) {
+                $displayQuestionsQuery = " SELECT * FROM questions WHERE category_id = $cid";
+            } else {
+                $displayQuestionsQuery = " SELECT * FROM questions";
+            }
             $result = $conn->query($displayQuestionsQuery);
             foreach ($result as $row) {
                 $title = $row['title'];

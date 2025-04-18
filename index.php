@@ -20,6 +20,9 @@
     <?php elseif (isset($_GET['q-id'])):  ?>
         <?php $qid = $_GET['q-id']; ?>
         <?php include('./client/questionDetail.php') ?>
+    <?php elseif (isset($_GET['c-id'])): ?>
+        <?php $cid = $_GET['c-id'] ?>
+        <?php include('./client/questions.php') ?>
     <?php elseif (include('./client/questions.php')):; ?>
     <?php endif ?>
 </body>
