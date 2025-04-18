@@ -29,6 +29,8 @@
     <?php elseif (include('./client/questions.php')):; ?>
     <?php elseif (isset($_GET['latest'])): ?>
         <?php include('./client/questions.php') ?>
+    <?php elseif (isset($_GET['search'])) : ?>
+        <?php include('./client/questions.php'); ?>
     <?php endif ?>
 </body>
 
