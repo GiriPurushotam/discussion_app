@@ -15,6 +15,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?ask=true">Ask a Question</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?u-id=<?php echo $_SESSION['user']['user_id'] ?>">My Questions</a>
+                    </li>
                 <?php    } ?>
 
                 <?php if (!isset($_SESSION['user']['username'])) { ?>

@@ -5,6 +5,9 @@
             <?php include('./common/db.php');
             if (isset($_GET["c-id"])) {
                 $displayQuestionsQuery = " SELECT * FROM questions WHERE category_id = $cid";
+            } elseif (isset($_GET['u-id'])) {
+
+                $displayQuestionsQuery = " SELECT * FROM questions WHERE user_id = $uid";
             } else {
                 $displayQuestionsQuery = " SELECT * FROM questions";
             }

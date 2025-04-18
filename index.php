@@ -23,6 +23,9 @@
     <?php elseif (isset($_GET['c-id'])): ?>
         <?php $cid = $_GET['c-id'] ?>
         <?php include('./client/questions.php') ?>
+    <?php elseif (isset($_GET['u-id'])): ?>
+        <?php $uid = $_GET['u-id'] ?>
+        <?php include('./client/questions.php'); ?>
     <?php elseif (include('./client/questions.php')):; ?>
     <?php endif ?>
 </body>
