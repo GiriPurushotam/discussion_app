@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./">
             <img src="./public/logo.png" alt="logo">
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -10,7 +10,7 @@
                 </li>
                 <?php if (isset($_SESSION['user']['username'])) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./server/requests.php?logout=true">Logout</a>
+                        <a class="nav-link" href="./server/requests.php?logout=true">Logout(<?php echo ucfirst($_SESSION['user']['username']) ?>)</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?ask=true">Ask a Question</a>
@@ -29,9 +29,6 @@
                     </li>
                 <?php } ?>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?latest=true">Latest Question</a>
                 </li>

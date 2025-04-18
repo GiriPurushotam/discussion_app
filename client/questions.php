@@ -6,6 +6,7 @@
             if (isset($_GET["c-id"])) {
                 $displayQuestionsQuery = " SELECT * FROM questions WHERE category_id = $cid";
             } elseif (isset($_GET['u-id'])) {
+                $uid = $_GET['u-id'];
 
                 $displayQuestionsQuery = " SELECT * FROM questions WHERE user_id = $uid";
             } elseif (isset($_GET['latest'])) {
@@ -22,8 +23,10 @@
                 $id = $row['id'];
                 echo
                 "<div class='row question-list'>
-        <h4><a href='?q-id=$id'>$title</a></h4>
-        </div>";
+        <h4 class='my-question'><a href='?q-id=$id'>$title</a>"; ?>
+            <?php $uid = isset($_GET['u-id']);
+                echo $uid ? "<a class='delete' href='./server/requests.php?delete=$id'>Delete</a>" : NULL;
+                echo "</h4> </div>";
             }
             ?>
 

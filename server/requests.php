@@ -76,4 +76,13 @@ if (isset($_POST['signup'])) {
     } else {
         echo "Error Submitting Answer";
     }
+} else if (isset($_GET['delete'])) {
+    $qid = $_GET['delete'];
+    $deleteQuery = $conn->prepare("DELETE FROM questions WHERE id=$qid");
+    $result = $deleteQuery->execute();
+    if ($result) {
+        header("location: /discussion_app");
+    } else {
+        echo " Error Try Again";
+    }
 }
